@@ -32,7 +32,7 @@
 
 ## 🚀 Live Demo
 
-Check out the live demo: [3D Developer Portfolio](https://your-portfolio-url.com)
+Check out the live demo: [3D Developer Portfolio](https://dev-mt.vercel.app)
 
 ## 🛠️ Technologies Used
 
