@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
+import { navLinks } from "@/lib"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -25,13 +26,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const navLinks = [
-    { href: "#hero", label: "Home" },
-    { href: "#projects", label: "Projects" },
-    { href: "#experience", label: "Experience" },
-    { href: "#technologies", label: "Skills" },
-    { href: "#contact", label: "Contact" },
-  ]
 
   return (
     <header

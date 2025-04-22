@@ -10,46 +10,7 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
-const experiences = [
-	{
-		id: 1,
-		role: "Full Stack Developer",
-		company: "Acme Leads Solutions (Pty) Ltd.",
-		period: "Jan 2025 - Present",
-		description:
-			"Developed and maintained multiple client projects with a focus on performance and accessibility. Implemented both monolithic as well as microservices architecture that improved system reliability and scalability.",
-		skills: [
-			"Next.js",
-			"TypeScript",
-			"TailwindCSS",
-			"Node.js",
-			"PostgreSQL",
-			"Docker",
-			"AWS",
-		],
-		achievements: [
-			"Built a custom website with a real-time analytics dashboard for a healthcare client",
-			"Optimized database queries resulting in 60% faster response times",
-			"Implemented automated testing that caught 95% of regressions",
-			"Implemented auto scaling and loading balancing to ensure high availability",
-		],
-	},
-	{
-		id: 2,
-		role: "Freelance Web Developer",
-		company: "Self Employed",
-		period: "Apr 2024 - Jan 2025",
-		description:
-			"Created responsive websites for clients across various industries. Created designs to implement pixel-perfect UIs and ensure seamless user experiences across different devices.",
-		skills: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB"],
-		achievements: [
-			"Developed 5+ client websites with 100% on-time delivery",
-			"Improved site performance and SEO scores by an average of 30%",
-			"Created a custom project management and workflow automation tool to speed up delivery time that I used myself",
-		],
-	},
-];
+import { experiences } from "@/lib";
 
 export default function Experience() {
 	const ref = useRef(null);
