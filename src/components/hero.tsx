@@ -295,7 +295,7 @@ export default function Hero() {
   const htmlPosition = isMobile ? [0, -0.5, 0.3] : [0, 0.7, 0.4]
 
   return (
-    <section id="hero" className="relative h-[85vh] md:h-screen w-full overflow-hidden">
+    <section id="hero" className="relative h-[90vh] md:h-screen w-full overflow-hidden">
       {/* Gradient background elements */}
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-black via-[#0a0118] to-[#0f0224] z-0"></div>
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-purple-500/10 blur-3xl"></div>
