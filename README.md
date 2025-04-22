@@ -9,7 +9,7 @@
   <a href="#"><img src="https://img.shields.io/badge/Tailwind-Latest-38bdf8?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" /></a>
 </p>
 
-<img src="https://github.com/yourusername/nextjs-3d-portfolio/raw/main/public/preview.png" alt="Portfolio Preview" width="800" />
+<img src="https://github.com/MancobaThabethe/3d-dev-portfolio/raw/main/public/preview.png" alt="Portfolio Preview" width="800" />
 </div>
 
 ## ✨ Features
