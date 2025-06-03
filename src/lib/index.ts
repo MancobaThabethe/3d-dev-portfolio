@@ -39,45 +39,45 @@ export const experiences = [
 ];
 
 export const mockSubmissions = [
-  {
-    id: "1",
-    name: "John Doe",
-    email: "john@example.com",
-    subject: "Project Inquiry",
-    message: "I'm interested in working with you on a new project. Can we schedule a call to discuss details?",
-    isRead: false,
-    createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(), // 2 hours ago
-  },
-  {
-    id: "2",
-    name: "Jane Smith",
-    email: "jane@example.com",
-    subject: "Job Opportunity",
-    message:
-      "We have an opening for a senior developer position that matches your skills. Would you be interested in discussing this opportunity?",
-    isRead: true,
-    createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // 2 days ago
-  },
-  {
-    id: "3",
-    name: "Alex Johnson",
-    email: "alex@example.com",
-    subject: "Collaboration Request",
-    message:
-      "I'm working on an open-source project and would love to have you contribute. The project focuses on creating accessible UI components.",
-    isRead: false,
-    createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(), // 5 days ago
-  },
-]
-
+	{
+		id: "1",
+		name: "John Doe",
+		email: "john@example.com",
+		subject: "Project Inquiry",
+		message:
+			"I'm interested in working with you on a new project. Can we schedule a call to discuss details?",
+		isRead: false,
+		createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(), // 2 hours ago
+	},
+	{
+		id: "2",
+		name: "Jane Smith",
+		email: "jane@example.com",
+		subject: "Job Opportunity",
+		message:
+			"We have an opening for a senior developer position that matches your skills. Would you be interested in discussing this opportunity?",
+		isRead: true,
+		createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // 2 days ago
+	},
+	{
+		id: "3",
+		name: "Alex Johnson",
+		email: "alex@example.com",
+		subject: "Collaboration Request",
+		message:
+			"I'm working on an open-source project and would love to have you contribute. The project focuses on creating accessible UI components.",
+		isRead: false,
+		createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(), // 5 days ago
+	},
+];
 
 export const navLinks = [
-    { href: "#hero", label: "Home" },
-    { href: "#projects", label: "Projects" },
-    { href: "#experience", label: "Experience" },
-    { href: "#technologies", label: "Skills" },
-    { href: "#contact", label: "Contact" },
-  ]
+	{ href: "#hero", label: "Home" },
+	{ href: "#projects", label: "Projects" },
+	{ href: "#experience", label: "Experience" },
+	{ href: "#technologies", label: "Skills" },
+	{ href: "#contact", label: "Contact" },
+];
 
 export const projects = [
 	{
@@ -87,11 +87,11 @@ export const projects = [
 			"A full-stack e-commerce platform with real-time inventory, AI-powered product recommendations, and seamless payment processing.",
 		longDescription:
 			"This comprehensive e-commerce solution features user authentication, product management, shopping cart functionality, secure payment processing with PayFast, and an admin dashboard for inventory management, order management & analytics. The platform includes real-time inventory updates, personalized product recommendations using machine learning, and detailed analytics for business insights.",
-		image: "/placeholder.svg?height=600&width=800",
+		image: "/projects/Project-1-1.png?height=600&width=800",
 		additionalImages: [
-			"/placeholder.svg?height=600&width=800&text=Product+Page",
-			"/placeholder.svg?height=600&width=800&text=Checkout+Flow",
-			"/placeholder.svg?height=600&width=800&text=Admin+Dashboard",
+			"/projects/Project-1-2.png?height=600&width=800&text=Product+Page",
+			"/projects/Project-1-3.png?height=600&width=800&text=Checkout+Flow",
+			"/projects/Project-1-4.png?height=600&width=800&text=Admin+Dashboard",
 		],
 		tags: [
 			"Next.js",
@@ -149,23 +149,28 @@ export const projects = [
 	},
 	{
 		id: 3,
-		title: "AI Content Generator",
+		title: "AI Resume Job Matcher",
 		description:
-			"Next-gen content creation tool powered by GPT-4o that generates SEO-optimized blog posts, social media content, and marketing copy.",
+			"An AI-powered platform that analyzes your resume with a given job description. It then checks if you are a good fit for the job based on your skills, experience, preferences and keywords that appear on both your resume and job description.",
 		longDescription:
-			"This AI-powered content generation platform leverages OpenAI's GPT-4o to create high-quality, SEO-optimized content for various purposes. The application includes specialized templates for blog posts, social media updates, product descriptions, and marketing copy. It features a user-friendly interface with real-time editing, content scoring, and SEO recommendations to ensure the generated content meets both user intent and search engine requirements.",
-		image: "/placeholder.svg?height=600&width=800",
+			"This application leverages Qroq AI's various models to intelligently parse and analyze user resumes, extracting key skills and experience. It then compares this data to your given job listing description, providing personalized job matches and recommendations. The platform features an intuitive interface, real-time feedback on resume optimization, and actionable insights to improve your chances of landing your ideal job.",
+		image: "/projects/project-2-1.png?height=600&width=800",
 		additionalImages: [
-			"/placeholder.svg?height=600&width=800&text=Content+Editor",
-			"/placeholder.svg?height=600&width=800&text=SEO+Analysis",
-			"/placeholder.svg?height=600&width=800&text=Template+Library",
+			"/projects/project-2-2.png?height=600&width=800&text=AI+Resume+Job+Matcher",
+			"/projects/project-2-3.png?height=600&width=800&text=AI+Resume+Job+Matcher",
+			"/projects/project-2-4.png?height=600&width=800&text=AI+Resume+Job+Matcher",
+			"/projects/project-2-5.png?height=600&width=800&text=AI+Resume+Job+Matcher",
+			"/projects/project-2-6.png?height=600&width=800&text=AI+Resume+Job+Matcher",
+			"/projects/project-2-7.png?height=600&width=800&text=AI+Resume+Job+Matcher",
+			"/projects/project-2-8.png?height=600&width=800&text=AI+Resume+Job+Matcher",
 		],
 		tags: [
 			"Next.js",
-			"OpenAI API",
+			"GroqAI",
 			"Tailwind CSS",
 			"TypeScript",
-			"Vercel AI SDK",
+			"Node.js",
+			"Express",
 		],
 		github: "https://github.com",
 		demo: "https://example.com",

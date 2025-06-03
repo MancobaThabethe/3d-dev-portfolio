@@ -20,21 +20,101 @@ import {
 } from "./tech-icons"
 
 const technologies = [
-  { name: "HTML5", icon: Html5, category: "frontend" },
-  { name: "CSS3", icon: Css3, category: "frontend" },
-  { name: "JavaScript", icon: Javascript, category: "frontend" },
-  { name: "TypeScript", icon: Typescript, category: "frontend" },
-  { name: "React", icon: ReactLogo, category: "frontend" },
-  { name: "Next.js", icon: Nextjs, category: "frontend" },
-  { name: "Tailwind CSS", icon: Tailwind, category: "frontend" },
-  { name: "Node.js", icon: Nodejs, category: "backend" },
-  { name: "MongoDB", icon: Mongodb, category: "backend" },
-  { name: "PostgreSQL", icon: Postgresql, category: "backend" },
-  { name: "Git", icon: Git, category: "tools" },
-  { name: "GitHub", icon: Github, category: "tools" },
-  { name: "Figma", icon: Figma, category: "tools" },
-  { name: "Vercel", icon: Vercel, category: "tools" },
-]
+	{
+		name: "HTML5",
+		icon: "/icons/html-5-svgrepo-com.svg",
+		category: "frontend",
+	},
+	{ name: "CSS3", icon: "/icons/css3-svgrepo-com.svg", category: "frontend" },
+  {
+    name: "Tailwind CSS",
+    icon: "/icons/tailwindcss-icon-svgrepo-com.svg",
+    category: "frontend",
+  },
+	{
+		name: "JavaScript",
+		icon: "/icons/javascript-logo-svgrepo-com.svg",
+		category: "frontend",
+	},
+	{
+		name: "TypeScript",
+		icon: "/icons/typescript-icon-svgrepo-com.svg",
+		category: "frontend",
+	},
+	{
+		name: "React",
+		icon: "/icons/reactjs-svgrepo-com.svg",
+		category: "frontend",
+	},
+	{
+		name: "Next.js",
+		icon: "/icons/nextjs-icon-svgrepo-com.svg",
+		category: "frontend",
+	},
+	{
+		name: "Node.js",
+		icon: "/icons/nodejs-icon-svgrepo-com.svg",
+		category: "backend",
+	},
+  {
+    name: "Express.js",
+    icon: "/icons/express-svgrepo-com.svg",
+    category: "backend",
+  },
+	{
+		name: "MongoDB",
+		icon: "/icons/mongo-svgrepo-com.svg",
+		category: "backend",
+	},
+	{
+		name: "PostgreSQL",
+		icon: "/icons/pgsql-svgrepo-com.svg",
+		category: "backend",
+	},
+	{ name: "Git", icon: "/icons/git-svgrepo-com.svg", category: "tools" },
+	{ name: "GitHub", icon: "/icons/github-svgrepo-com.svg", category: "tools" },
+	{ name: "Figma", icon: Figma, category: "tools" },
+	{
+		name: "Vercel",
+		icon: "/icons/vercel-icon-svgrepo-com.svg",
+		category: "tools",
+	},
+  {
+    name: "Prisma",
+    icon: "/icons/prisma-svgrepo-com.svg",
+    category: "backend",
+  },
+  {
+    name: "Redis",
+    icon: "/icons/redis-svgrepo-com.svg",
+    category: "backend",
+  },
+  {
+    name: "Docker",
+    icon: "/icons/docker-svgrepo-com.svg",
+    category: "backend",
+  },
+  {
+    name: "Kubernetes",
+    icon: "/icons/kubernetes-svgrepo-com.svg",
+    category: "backend",
+  },
+  {
+    name: "Terraform",
+    icon: "/icons/terraform-icon-svgrepo-com.svg",
+    category: "backend",
+  },
+	{
+		name: "AWS (certification in progress)",
+		icon: "/icons/aws-svgrepo-com.svg",
+		category: "backend",
+	},
+  {
+		name: "Zod",
+		icon: "/icons/zod-seeklogo.svg",
+		category: "tools",
+	},
+];
 
 function TechIcon({ tech, index, isInView }) {
   const [isHovered, setIsHovered] = useState(false)
@@ -67,12 +147,20 @@ function TechIcon({ tech, index, isInView }) {
           ${isHovered ? "border-primary/40 shadow-md shadow-primary/5 scale-110" : ""}
         `}
       >
-        <tech.icon
-          className={`
-            w-10 h-10 transition-all duration-300
-            ${isHovered ? "text-primary scale-110" : "text-muted-foreground"}
-          `}
-        />
+        {typeof tech.icon === "string" ? (
+          <img
+            src={tech.icon}
+            alt={tech.name}
+            className={`w-10 h-10 transition-all duration-300 ${isHovered ? "scale-110" : ""}`}
+          />
+        ) : (
+          <tech.icon
+            className={`
+              w-10 h-10 transition-all duration-300
+              ${isHovered ? "text-primary scale-110" : "text-muted-foreground"}
+            `}
+          />
+        )}
         <motion.div
           className="absolute -bottom-2 left-0 right-0 h-1 mx-auto w-8 bg-gradient-to-r from-primary/0 via-primary to-primary/0 rounded-full"
           initial={{ opacity: 0, width: "30%" }}
@@ -83,7 +171,7 @@ function TechIcon({ tech, index, isInView }) {
           transition={{ duration: 0.3 }}
         />
       </div>
-      <span className={`text-sm font-medium transition-colors duration-300 ${isHovered ? "text-primary" : ""}`}>
+      <span className={`text-sm font-medium transition-colors duration-300 text-center ${isHovered ? "text-primary" : ""}`}>
         {tech.name}
       </span>
     </motion.div>
@@ -97,7 +185,7 @@ export default function Technologies() {
   return (
     <section
       id="technologies"
-      className="py-24 bg-gradient-to-b from-background/95 via-background to-muted/30 relative"
+      className="py-24 md:px-10 bg-gradient-to-b from-background/95 via-background to-muted/30 relative"
     >
       {/* Add decorative elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl opacity-50 pointer-events-none" />

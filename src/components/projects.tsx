@@ -60,7 +60,7 @@ function ProjectModal({ project, isOpen, onClose }) {
 									src={images[currentImageIndex] || "/placeholder.svg"}
 									alt={`${project.title} - Image ${currentImageIndex + 1}`}
 									fill
-									className="object-cover"
+									className="p-4 md:p-8 rounded-xl"
 								/>
 
 								{/* Image navigation */}
