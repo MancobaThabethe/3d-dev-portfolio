@@ -1,29 +1,45 @@
-"use client"
+"use client";
 
-import { useState, useRef } from "react"
-import { motion, useInView, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink, X, ChevronLeft, ChevronRight, Layers, Calendar, Code } from "lucide-react"
-import { useMobile } from "@/hooks/use-mobile"
-import { projects } from "@/lib"
+import { useState, useRef } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+	Github,
+	ExternalLink,
+	X,
+	ChevronLeft,
+	ChevronRight,
+	Layers,
+	Calendar,
+	Code,
+} from "lucide-react";
+import { useMobile } from "@/hooks/use-mobile";
+import { projects } from "@/lib";
 
 function ProjectModal({ project, isOpen, onClose }) {
-  const isMobile = useMobile()
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const images = [project.image, ...project.additionalImages]
+	const isMobile = useMobile();
+	const [currentImageIndex, setCurrentImageIndex] = useState(0);
+	const images = [project.image, ...project.additionalImages];
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % images.length)
-  }
+	const nextImage = () => {
+		setCurrentImageIndex((prev) => (prev + 1) % images.length);
+	};
 
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
-  }
+	const prevImage = () => {
+		setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+	};
 
-  return (
+	return (
 		<AnimatePresence>
 			{isOpen && (
 				<motion.div
@@ -198,7 +214,7 @@ function ProjectModal({ project, isOpen, onClose }) {
 							</div>
 
 							<div className="flex flex-wrap gap-4 pt-2">
-								{project?.site ? 
+								{project?.site ? (
 									<Button
 										asChild
 										className="gap-2"
@@ -211,10 +227,9 @@ function ProjectModal({ project, isOpen, onClose }) {
 											<ExternalLink className="h-4 w-4" />
 											Live Site
 										</a>
-									</Button> : null
-								}
-								{
-                  project?.demo ? 
+									</Button>
+								) : null}
+								{project?.demo ? (
 									<Button
 										asChild
 										className="gap-2"
@@ -227,10 +242,9 @@ function ProjectModal({ project, isOpen, onClose }) {
 											<ExternalLink className="h-4 w-4" />
 											Live Demo
 										</a>
-									</Button> : null
-                }
-								{
-                  project?.github ? 
+									</Button>
+								) : null}
+								{project?.github ? (
 									<Button
 										asChild
 										className="gap-2"
@@ -243,8 +257,8 @@ function ProjectModal({ project, isOpen, onClose }) {
 											<ExternalLink className="h-4 w-4" />
 											Github
 										</a>
-									</Button> : null
-                }
+									</Button>
+								) : null}
 							</div>
 						</div>
 					</motion.div>
@@ -255,23 +269,23 @@ function ProjectModal({ project, isOpen, onClose }) {
 }
 
 export default function Projects() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
-  const [selectedProject, setSelectedProject] = useState(null)
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true, amount: 0.2 });
+	const [selectedProject, setSelectedProject] = useState(null);
 
-  const openProjectModal = (project) => {
-    setSelectedProject(project)
-    // Prevent body scrolling when modal is open
-    document.body.style.overflow = "hidden"
-  }
+	const openProjectModal = (project) => {
+		setSelectedProject(project);
+		// Prevent body scrolling when modal is open
+		document.body.style.overflow = "hidden";
+	};
 
-  const closeProjectModal = () => {
-    setSelectedProject(null)
-    // Restore body scrolling
-    document.body.style.overflow = "auto"
-  }
+	const closeProjectModal = () => {
+		setSelectedProject(null);
+		// Restore body scrolling
+		document.body.style.overflow = "auto";
+	};
 
-  return (
+	return (
 		<section
 			id="projects"
 			className="py-24 px-4 lg:px-8 bg-gradient-to-b from-background via-background/95 to-muted/50"
@@ -313,31 +327,31 @@ export default function Projects() {
 						variant="default"
 						size="lg"
 						className="group"
-            asChild
+						asChild
 					>
 						<a
 							href="https://github.com/MancobaThabethe?tab=repositories"
 							target="_blank"
 							rel="noopener noreferrer"
-              className="flex gap-2 items-center"
+							className="flex gap-2 items-center"
 						>
-						View All Projects
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							strokeWidth="2"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
-						>
-							<path d="M5 12h14" />
-							<path d="m12 5 7 7-7 7" />
-						</svg>
-            </a>
+							View All Projects
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								strokeWidth="2"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+							>
+								<path d="M5 12h14" />
+								<path d="m12 5 7 7-7 7" />
+							</svg>
+						</a>
 					</Button>
 				</div>
 			</div>
@@ -355,86 +369,113 @@ export default function Projects() {
 }
 
 function ProjectCard({ project, index, isInView, onOpenModal }) {
-  const [isHovered, setIsHovered] = useState(false)
-  const cardRef = useRef(null)
-  const isCardInView = useInView(cardRef, { once: true, amount: 0.3 })
+	const [isHovered, setIsHovered] = useState(false);
+	const cardRef = useRef(null);
+	const isCardInView = useInView(cardRef, { once: false, amount: 0.3 }); // animate every scroll
 
-  return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 50 }}
-      animate={
-        isCardInView
-          ? {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-            }
-          : {}
-      }
-    >
-      <Card
-        className="overflow-hidden border border-border/40 bg-background/80 backdrop-blur-sm transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 cursor-pointer"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        style={{
-          transform: isHovered ? "translateY(-12px)" : "translateY(0px)",
-          transition: "transform 0.3s ease-out",
-        }}
-        onClick={onOpenModal}
-      >
-        <div className="relative aspect-video overflow-hidden">
-          <div
-            className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10 opacity-0 transition-opacity duration-300"
-            style={{ opacity: isHovered ? 0.6 : 0 }}
-          />
-          <Image
-            src={project.image || "/placeholder.svg"}
-            alt={project.title}
-            fill
-            className="object-cover transition-transform duration-700 ease-out"
-            style={{ transform: isHovered ? "scale(1.1)" : "scale(1)" }}
-          />
-          {isHovered && (
-            <motion.div
-              className="absolute bottom-4 right-4 z-20"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Button size="sm" className="bg-primary hover:bg-primary/80">
-                View Details
-              </Button>
-            </motion.div>
-          )}
-        </div>
-        <CardHeader>
-          <CardTitle className="text-xl tracking-tight">{project.title}</CardTitle>
-          <CardDescription className="line-clamp-2">{project.description}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="bg-secondary/50 hover:bg-secondary transition-colors">
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        </CardContent>
-        <CardFooter className="flex justify-between border-t border-border/30 bg-muted/30 py-3">
-          <Button variant="ghost" size="sm" className="gap-1 text-primary hover:text-primary hover:bg-primary/10">
-            <span>Details</span>
-          </Button>
-          {
-            project?.github ? <Button variant="ghost" size="sm" asChild className="gap-1 text-muted-foreground hover:text-foreground">
-            <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-              <Github className="h-4 w-4" />
-              Code
-            </a>
-          </Button> : null
-          }
-        </CardFooter>
-      </Card>
-    </motion.div>
-  )
+	return (
+		<motion.div
+			ref={cardRef}
+			initial={{ opacity: 0, y: 50 }}
+			animate={
+				isCardInView
+					? {
+							opacity: 1,
+							y: 0,
+							transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+					  }
+					: { opacity: 0, y: 50 }
+			}
+			exit={{ opacity: 0, y: 50 }}
+			viewport={{ once: false, amount: 0.3 }}
+		>
+			<Card
+				className="overflow-hidden border border-border/40 bg-background/80 backdrop-blur-sm transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 cursor-pointer"
+				onMouseEnter={() => setIsHovered(true)}
+				onMouseLeave={() => setIsHovered(false)}
+				style={{
+					transform: isHovered ? "translateY(-12px)" : "translateY(0px)",
+					transition: "transform 0.3s ease-out",
+				}}
+				onClick={onOpenModal}
+			>
+				<div className="relative aspect-video overflow-hidden">
+					<div
+						className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10 opacity-0 transition-opacity duration-300"
+						style={{ opacity: isHovered ? 0.6 : 0 }}
+					/>
+					<Image
+						src={project.image || "/placeholder.svg"}
+						alt={project.title}
+						fill
+						className="object-cover transition-transform duration-700 ease-out"
+						style={{ transform: isHovered ? "scale(1.1)" : "scale(1)" }}
+					/>
+					{isHovered && (
+						<motion.div
+							className="absolute bottom-4 right-4 z-20"
+							initial={{ opacity: 0, scale: 0.8 }}
+							animate={{ opacity: 1, scale: 1 }}
+							transition={{ duration: 0.2 }}
+						>
+							<Button
+								size="sm"
+								className="bg-primary hover:bg-primary/80"
+							>
+								View Details
+							</Button>
+						</motion.div>
+					)}
+				</div>
+				<CardHeader>
+					<CardTitle className="text-xl tracking-tight">
+						{project.title}
+					</CardTitle>
+					<CardDescription className="line-clamp-2">
+						{project.description}
+					</CardDescription>
+				</CardHeader>
+				<CardContent>
+					<div className="flex flex-wrap gap-2">
+						{project.tags.map((tag) => (
+							<Badge
+								key={tag}
+								variant="secondary"
+								className="bg-secondary/50 hover:bg-secondary transition-colors"
+							>
+								{tag}
+							</Badge>
+						))}
+					</div>
+				</CardContent>
+				<CardFooter className="flex justify-between border-t border-border/30 bg-muted/30 py-3">
+					<Button
+						variant="ghost"
+						size="sm"
+						className="gap-1 text-primary hover:text-primary hover:bg-primary/10"
+					>
+						<span>Details</span>
+					</Button>
+					{project?.github ? (
+						<Button
+							variant="ghost"
+							size="sm"
+							asChild
+							className="gap-1 text-muted-foreground hover:text-foreground"
+						>
+							<a
+								href={project.github}
+								target="_blank"
+								rel="noopener noreferrer"
+								onClick={(e) => e.stopPropagation()}
+							>
+								<Github className="h-4 w-4" />
+								Code
+							</a>
+						</Button>
+					) : null}
+				</CardFooter>
+			</Card>
+		</motion.div>
+	);
 }
