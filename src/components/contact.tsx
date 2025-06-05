@@ -1,37 +1,40 @@
-"use client"
+"use client";
 
-import { useRef, useState } from "react"
-import { motion, useInView } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
-import { useToast } from "@/hooks/use-toast"
+import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export default function Contact() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const { toast } = useToast()
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true, amount: 0.2 });
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const { toast } = useToast();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+		// Simulate form submission
+		await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    })
+		toast({
+			title: "Message sent!",
+			description: "Thanks for reaching out. I'll get back to you soon.",
+		});
 
-    setIsSubmitting(false)
-    e.target.reset()
-  }
+		setIsSubmitting(false);
+		e.target.reset();
+	};
 
-  return (
+	return (
 		<section
 			id="contact"
 			className="py-24 bg-gradient-to-b from-muted/30 to-background relative"
@@ -156,7 +159,8 @@ export default function Contact() {
 
 						<div className="bg-background border border-border/40 rounded-xl p-6 shadow-sm relative z-10">
 							<form
-								onSubmit={handleSubmit}
+								action={process.env.FORMSPREE!}
+								method="POST"
 								className="space-y-5"
 							>
 								<h3 className="text-lg font-medium mb-4">Send Me a Message</h3>

@@ -114,18 +114,23 @@ export default function Experience() {
 							}
 						}
 						return (
-							<motion.div
-								key={experience.id}
-								initial={initial}
-								whileInView={animate}
-								exit={exit}
-								viewport={{ once: false, amount: 0.3 }}
-								className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
-							>
-								<div className="flex items-center justify-center w-10 h-10 rounded-full border border-primary/30 bg-background shadow-md shadow-primary/5 z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+							// <motion.div
+							// key={experience.id}
+							// 	initial={initial}
+							// 	whileInView={animate}
+							// 	exit={exit}
+							// 	viewport={{ once: false, amount: 0.3 }}
+							// 	className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group space-y-4 md:space-y-0 !translate-x-0"
+							// 	style={{
+							// 		transform: "translateX(0px)"!,
+							// 		transition: "transform 0.3s ease-out",
+							// 	}}
+							// 	>
+							<div className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group space-y-4 md:space-y-0 !translate-x-0">
+								<div className="flex items-center justify-center w-10 h-10 rounded-full border border-primary/30 bg-background shadow-md shadow-primary/5 z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 mb-2 md:mb-0">
 									<span className="w-3 h-3 bg-primary rounded-full animate-pulse"></span>
 								</div>
-								<div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)]">
+								<div className="w-full md:w-[calc(50%-2.5rem)]">
 									<Card className="border border-border/40 bg-background/80 backdrop-blur-sm hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
 										<CardHeader>
 											<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
@@ -192,7 +197,8 @@ export default function Experience() {
 										</CardContent>
 									</Card>
 								</div>
-							</motion.div>
+							</div>
+							// </motion.div>
 						);
 					})}
 				</div>

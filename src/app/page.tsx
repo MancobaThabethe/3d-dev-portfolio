@@ -29,14 +29,14 @@ export default function Home() {
 				>
 					<Projects />
 				</motion.div>
-				<motion.div
+				{/* <motion.div
 					key="experience"
 					initial={{ opacity: 0, y: 40 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-				>
+				> */}
 					<Experience />
-				</motion.div>
+				{/* </motion.div> */}
 				<motion.div
 					key="technologies"
 					initial={{ opacity: 0, y: 40 }}
