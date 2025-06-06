@@ -32,7 +32,7 @@ export default function Navbar() {
 				"fixed top-0 w-full z-50 transition-all duration-300",
 				isScrolled
 					? "bg-background/80 backdrop-blur-md border-b"
-					: "bg-transparent"
+					: "bg-transparent text-white"
 			)}
 		>
 			<div className="container flex h-16 items-center justify-between">
@@ -40,7 +40,7 @@ export default function Navbar() {
 					href="/"
 					className="font-bold text-xl tracking-tight hover:opacity-80 transition-opacity"
 				>
-					<span className="text-primary">Mancoba</span>Thabethe
+					<span className="text-primary">Mancoba </span>Thabethe
 				</Link>
 
 				{/* Desktop Navigation */}
@@ -50,10 +50,8 @@ export default function Navbar() {
 							key={link.href}
 							href={link.href}
 							className={cn(
-								"text-sm font-medium transition-colors hover:text-primary",
-								pathname === link.href
-									? "text-primary"
-									: "text-muted-foreground"
+								`text-sm font-medium transition-colors hover:text-primary`,
+								isScrolled ? "text-muted-foreground" : `text-white`
 							)}
 						>
 							{link.label}
@@ -84,13 +82,19 @@ export default function Navbar() {
 
 			{/* Mobile Navigation */}
 			{isMobileMenuOpen && (
-				<div className="md:hidden bg-background border-b">
+				<div
+					className={`md:hidden ${
+						isScrolled
+							? "bg-background/80 backdrop-blur-md border-b"
+							: "bg-[#0A0A0A]/5 backdrop-blur-lg text-white"
+					}`}
+				>
 					<nav className="container flex flex-col py-4">
 						{navLinks.map((link) => (
 							<Link
 								key={link.href}
 								href={link.href}
-								className="py-2 text-sm font-medium transition-colors hover:text-primary"
+								className="py-2 font-medium transition-colors hover:text-primary"
 								onClick={() => setIsMobileMenuOpen(false)}
 							>
 								{link.label}

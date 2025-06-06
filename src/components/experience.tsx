@@ -114,19 +114,7 @@ export default function Experience() {
 							}
 						}
 						return (
-							// <motion.div
-							// key={experience.id}
-							// 	initial={initial}
-							// 	whileInView={animate}
-							// 	exit={exit}
-							// 	viewport={{ once: false, amount: 0.3 }}
-							// 	className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group space-y-4 md:space-y-0 !translate-x-0"
-							// 	style={{
-							// 		transform: "translateX(0px)"!,
-							// 		transition: "transform 0.3s ease-out",
-							// 	}}
-							// 	>
-							<div className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group space-y-4 md:space-y-0 !translate-x-0">
+							<div className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group space-y-4 md:space-y-0 gap-2">
 								<div className="flex items-center justify-center w-10 h-10 rounded-full border border-primary/30 bg-background shadow-md shadow-primary/5 z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 mb-2 md:mb-0">
 									<span className="w-3 h-3 bg-primary rounded-full animate-pulse"></span>
 								</div>
@@ -198,7 +186,6 @@ export default function Experience() {
 									</Card>
 								</div>
 							</div>
-							// </motion.div>
 						);
 					})}
 				</div>
